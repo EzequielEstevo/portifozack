@@ -57,4 +57,59 @@
 
 /* Link com underline animado */
 a:not(.menu-link):not(.botao-acao):not(.card-link) {
-    position: relative;\n    transition: color 0.3s ease;\n}\n\na:not(.menu-link):not(.botao-acao):not(.card-link)::after {\n    content: '';\n    position: absolute;\n    bottom: -2px;\n    left: 0;\n    width: 0;\n    height: 2px;\n    background: linear-gradient(90deg, #5fc3f7, #1ad102);\n    transition: width 0.3s ease;\n}\n\na:not(.menu-link):not(.botao-acao):not(.card-link):hover {\n    color: #5fc3f7;\n}\n\na:not(.menu-link):not(.botao-acao):not(.card-link):hover::after {\n    width: 100%;\n}\n\n/* Scroll smooth */\nhtml {\n    scroll-behavior: smooth;\n}\n\n/* Seleção de texto com estilo */\n::selection {\n    background-color: #5fc3f7;\n    color: #0f0f0f;\n}\n\n::-moz-selection {\n    background-color: #5fc3f7;\n    color: #0f0f0f;\n}\n\n/* Scrollbar customizada */\n::-webkit-scrollbar {\n    width: 10px;\n}\n\n::-webkit-scrollbar-track {\n    background: #0f0f0f;\n}\n\n::-webkit-scrollbar-thumb {\n    background: linear-gradient(180deg, #5fc3f7, #1ad102);\n    border-radius: 5px;\n}\n\n::-webkit-scrollbar-thumb:hover {\n    background: linear-gradient(180deg, #1ad102, #5fc3f7);\n}\n
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+a:not(.menu-link):not(.botao-acao):not(.card-link)::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #5fc3f7, #1ad102);
+    transition: width 0.3s ease;
+}
+
+a:not(.menu-link):not(.botao-acao):not(.card-link):hover {
+    color: #5fc3f7;
+}
+
+a:not(.menu-link):not(.botao-acao):not(.card-link):hover::after {
+    width: 100%;
+}
+
+/* Scroll smooth */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Seleção de texto com estilo */
+::selection {
+    background-color: #5fc3f7;
+    color: #0f0f0f;
+}
+
+::-moz-selection {
+    background-color: #5fc3f7;
+    color: #0f0f0f;
+}
+
+/* Scrollbar customizada */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0f0f0f;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #5fc3f7, #1ad102);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #1ad102, #5fc3f7);
+}
