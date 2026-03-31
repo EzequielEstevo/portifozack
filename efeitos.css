@@ -1,0 +1,60 @@
+/* Animações e Efeitos Profissionais */
+
+/* Gradiente animado para textos */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Efeito de partículas flutuantes */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Pulsação suave */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* Entrada suave */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efeito de luz passando */
+@keyframes lightswipe {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Link com underline animado */
+a:not(.menu-link):not(.botao-acao):not(.card-link) {
+    position: relative;\n    transition: color 0.3s ease;\n}\n\na:not(.menu-link):not(.botao-acao):not(.card-link)::after {\n    content: '';\n    position: absolute;\n    bottom: -2px;\n    left: 0;\n    width: 0;\n    height: 2px;\n    background: linear-gradient(90deg, #5fc3f7, #1ad102);\n    transition: width 0.3s ease;\n}\n\na:not(.menu-link):not(.botao-acao):not(.card-link):hover {\n    color: #5fc3f7;\n}\n\na:not(.menu-link):not(.botao-acao):not(.card-link):hover::after {\n    width: 100%;\n}\n\n/* Scroll smooth */\nhtml {\n    scroll-behavior: smooth;\n}\n\n/* Seleção de texto com estilo */\n::selection {\n    background-color: #5fc3f7;\n    color: #0f0f0f;\n}\n\n::-moz-selection {\n    background-color: #5fc3f7;\n    color: #0f0f0f;\n}\n\n/* Scrollbar customizada */\n::-webkit-scrollbar {\n    width: 10px;\n}\n\n::-webkit-scrollbar-track {\n    background: #0f0f0f;\n}\n\n::-webkit-scrollbar-thumb {\n    background: linear-gradient(180deg, #5fc3f7, #1ad102);\n    border-radius: 5px;\n}\n\n::-webkit-scrollbar-thumb:hover {\n    background: linear-gradient(180deg, #1ad102, #5fc3f7);\n}\n
