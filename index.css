@@ -132,6 +132,14 @@ body {
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
+/* Botões Container */
+.container-botoes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
 /* Botão */
 .botao-acao {
     display: inline-block;
