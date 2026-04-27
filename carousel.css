@@ -38,28 +38,7 @@
     transform: scale(1.2);
 }
 
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(95, 195, 247, 0.2);
-    color: white;
-    border: none;
-    padding: 15px;
-    cursor: pointer;
-    border-radius: 50%;
-    font-size: 18px;
-    transition: all 0.3s ease;
-    z-index: 10;
-}
 
-.prev:hover, .next:hover {
-    background: rgba(95, 195, 247, 0.5);
-    color: #0f0f0f;
-}
-
-.prev { left: 10px; }
-.next { right: 10px; }
 
 @media (max-width: 768px) {
     .slide { min-width: 33.33%; }

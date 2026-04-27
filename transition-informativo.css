@@ -1,0 +1,194 @@
+.carousel-informativo {
+  width: 100%;
+  height: calc(100vh - 150px);
+  position: relative;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.carousel-informativo .items-group {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.carousel-informativo .item {
+  top: 0px;
+  left: 0px;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+  transition: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  visibility: hidden;
+  position: absolute;
+  padding: 50px 20px;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.carousel-informativo .item.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.carousel-informativo .item .bg {
+  top: 0px;
+  left: 0px;
+  opacity: 0.4;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  transition: 0.8s;
+  position: absolute;
+  transform: scale(1.1);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.carousel-informativo .item.active .bg {
+    transform: scale(1);
+}
+
+.carousel-informativo .item .blur {
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  transition: 0.8s;
+  filter: blur(20px);
+  position: absolute;
+  transform: scale(1.1);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0;
+}
+
+.carousel-informativo .item.active .blur {
+    opacity: 0.3;
+    transform: scale(1);
+}
+
+.carousel-informativo .item .block {
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  color: #ffffff;
+  transition: all 0.5s;
+  max-width: 400px;
+  overflow: hidden;
+  max-height: 500px;
+  border-radius: 20px;
+  transform: translateY(30px);
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.carousel-informativo .item.active .block {
+    transform: translateY(0);
+}
+
+.carousel-informativo .item .block .circleLight {
+  top: 0px;
+  left: 0px;
+  opacity: 0;
+  content: '';
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: 0.5s;
+  position: absolute;
+  border-radius: 20px;
+  background: radial-gradient(circle at center, rgba(95, 195, 247, 0.2), transparent);
+  pointer-events: none;
+}
+
+.carousel-informativo .item .block:hover .circleLight {
+  opacity: 1;
+}
+
+.carousel-informativo .item .block h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+  color: #5fc3f7;
+  font-weight: 700;
+}
+
+.carousel-informativo .item .block p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #e0e0e0;
+}
+
+.carousel-informativo .item .block:hover {
+  box-shadow: 0px 0px 70px rgba(95, 195, 247, 0.3);
+  transform: scale(1.02);
+}
+
+.carousel-informativo .navigations {
+  bottom: 30px;
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+}
+
+.carousel-informativo .navigations .dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+}
+
+.carousel-informativo .navigations .dots li {
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+  transition: 0.4s;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+}
+
+.carousel-informativo .navigations .dots li:hover {
+  background: rgba(95, 195, 247, 0.5);
+  transform: scale(1.2);
+}
+
+.carousel-informativo .navigations .dots li.active {
+  width: 30px;
+  border-radius: 10px;
+  background: #5fc3f7;
+  box-shadow: 0 0 15px rgba(95, 195, 247, 0.5);
+}
+
+@media (max-width: 768px) {
+    .carousel-informativo {
+        height: calc(100vh - 100px);
+    }
+    .carousel-informativo .item .block {
+        max-width: 90%;
+        max-height: 80%;
+        padding: 20px;
+    }
+    .carousel-informativo .item .block h2 {
+        font-size: 24px;
+    }
+    .carousel-informativo .item .block p {
+        font-size: 14px;
+    }
+}

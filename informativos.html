@@ -1,43 +1,65 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Informativos</title>
-    <link rel="stylesheet" href="informativos.css">
-    <link rel="stylesheet" href="efeitos.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
-<body>
-
+    <link rel="stylesheet" href="informativos.css" />
+    <link rel="stylesheet" href="efeitos.css" />
+    <link rel="stylesheet" href="page-transition.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <header class="cabecalho">
-        <nav class="menu">
-            <a href="index.html" class="menu-link">INICIO</a>
-            <a href="informativos.html" class="menu-link ativo">INFORMATIVOS</a>
-            <a href="contato.html" class="menu-link">CONTATO</a>
-        </nav>
-        <h1 class="titulo-pagina">Informativos</h1>
-        <p class="descricao-pagina">Atualizações, novidades e conteúdos importantes.</p>
+      <nav class="menu">
+        <a href="index.html" class="menu-link">INICIO</a>
+        <a href="informativos.html" class="menu-link ativo">INFORMATIVOS</a>
+        <a href="contato.html" class="menu-link">CONTATO</a>
+      </nav>
+      <h1 class="titulo-pagina">Informativos</h1>
+      <p class="descricao-pagina">
+        Atualizações, novidades e conteúdos importantes.
+      </p>
     </header>
 
     <main class="conteudo-principal">
+      <!-- BLOCO DE INFORMATIVO -->
+      <section class="card-informativo">
+        <h2 class="titulo-informativo">CRIAÇÃO DO SITE</h2>
+        <p class="data-informativo">14/02/2026</p>
+        <p class="texto-informativo">
+          Desenvolvido com controle de versão no GitHub, o projeto conta com uma
+          estrutura organizada de arquivos e pastas, seguindo boas práticas.
+          Após a finalização, foi realizado o deploy da aplicação, tornando o
+          portfólio acessível online. Este site representa a aplicação prática
+          dos meus estudos em desenvolvimento web e automação, evidenciando
+          minha evolução técnica e capacidade de entregar soluções funcionais.
+        </p>
+      </section>
 
-        <!-- BLOCO DE INFORMATIVO -->
-        <section class="card-informativo">
-            <h2 class="titulo-informativo">CRIAÇÃO DO SITE</h2>
-            <p class="data-informativo">14/02/2026</p>
-            <p class="texto-informativo">
-               Desenvolvido com controle de versão no GitHub, o projeto conta com uma estrutura organizada de arquivos e pastas, seguindo boas práticas. Após a finalização, foi realizado o deploy da aplicação, tornando o portfólio acessível online.
+      <!-- DUPLIQUE ESTE BLOCO PARA NOVOS INFORMATIVOS -->
 
-Este site representa a aplicação prática dos meus estudos em desenvolvimento web e automação, evidenciando minha evolução técnica e capacidade de entregar soluções funcionais.
-            </p>
-        </section>
-
-        <!-- DUPLIQUE ESTE BLOCO PARA NOVOS INFORMATIVOS -->
-
+      <section class="card-informativo">
+        <h2 class="titulo-informativo">Zentra Web app</h2>
+        <p class="data-informativo">26/04/2026</p>
+        <p class="texto-informativo">
+          <strong>Web App Gamificado de Produtividade e Foco</strong><br />
+          Gerencie suas rotinas e metas através de um sistema de missões
+          cronometradas. Ao concluir seus objetivos, você recebe XP e sobe de
+          nível no ranking global. O app oferece suporte a guias de estudo
+          estruturados e personalização de perfil (imagem e tag motivadora).
+          Desenvolvido com tecnologia<strong> PWA (Progressive Web App)</strong
+          >, permite a instalação na tela inicial do dispositivo. Garantimos a
+          <strong> total segurança e privacidade dos seus dados.</strong>
+        </p>
+      </section>
     </main>
 
-</body>
+    <script src="page-transition.js"></script>
+  </body>
 </html>
