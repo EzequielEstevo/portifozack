@@ -1,21 +1,4 @@
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    font-family: "Roboto", sans-serif;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #0f0f0f;
-    color: #d0d0d0;
-    text-align: center;
-    position: relative;
-    overflow-x: hidden;
-}
-
+/* Background */
 .bg-conexao {
     position: fixed;
     top: 0;
@@ -29,45 +12,10 @@ body {
     pointer-events: none;
 }
 
-/* Cabeçalho */
-.cabecalho {
-    background: linear-gradient(180deg, rgba(26, 26, 26, 0.95), rgba(26, 26, 26, 0.85));
-    padding: 15px 0;
-    border-bottom: 2px solid #5fc3f7;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.menu {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
-.menu-link {
-    color: #d0d0d0;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    padding: 8px 15px;
-    border-radius: 5px;
-    position: relative;
-}
-
-.menu-link:hover {
-    color: #5fc3f7;
-    background-color: rgba(95, 195, 247, 0.1);
-    transform: translateY(-2px);
-}
-
 /* Seção Principal */
 .secao-principal {
     padding: 60px 20px;
+    text-align: center;
     animation: fadeInDown 0.8s ease-out;
 }
 
@@ -82,7 +30,7 @@ body {
     }
 }
 
-/* Imagem redonda */
+/* Imagem de Perfil */
 .imagem-perfil {
     position: relative;
     display: inline-block;
@@ -140,7 +88,7 @@ body {
     flex-wrap: wrap;
 }
 
-/* Botão */
+/* Botão de Ação */
 .botao-acao {
     display: inline-block;
     padding: 15px 40px;
@@ -175,125 +123,22 @@ body {
     left: 100%;
 }
 
-/* Responsivo - Mobile Extra Pequeno */
+/* Responsividade */
+@media (max-width: 900px) {
+    .titulo { font-size: 32px; }
+    .imagem-perfil img { width: 180px; height: 180px; }
+    .secao-principal { padding: 40px 15px; }
+    .descricao { font-size: 14px; }
+}
+
+@media (max-width: 600px) {
+    .titulo { font-size: 26px; }
+    .imagem-perfil img { width: 150px; height: 150px; }
+    .botao-acao { padding: 12px 25px; font-size: 14px; }
+}
+
 @media (max-width: 375px) {
-    .secao-principal {
-        padding: 40px 15px;
-    }
-
-    .titulo {
-        font-size: 22px;
-    }
-
-    .imagem-perfil img {
-        width: 150px;
-        height: 150px;
-    }
-
-    .menu {
-        gap: 8px;
-    }
-
-    .menu-link {
-        font-size: 11px;
-    }
-
-    .descricao {
-        font-size: 13px;
-    }
-
-    .botao-acao {
-        padding: 10px 20px;
-        font-size: 12px;
-    }
-}
-
-/* Responsivo - Mobile Pequeno */
-@media (min-width: 376px) and (max-width: 599px) {
-    .titulo {
-        font-size: 24px;
-    }
-
-    .imagem-perfil img {
-        width: 180px;
-        height: 180px;
-    }
-
-    .menu {
-        gap: 10px;
-    }
-
-    .menu-link {
-        font-size: 12px;
-    }
-
-    .descricao {
-        font-size: 14px;
-    }
-
-    .botao-acao {
-        padding: 12px 25px;
-        font-size: 14px;
-    }
-}
-
-/* Responsivo - Tablet */
-@media (min-width: 600px) and (max-width: 900px) {
-    .secao-principal {
-        padding: 50px 30px;
-    }
-
-    .titulo {
-        font-size: 28px;
-    }
-
-    .imagem-perfil img {
-        width: 200px;
-        height: 200px;
-    }
-
-    .menu {
-        gap: 20px;
-    }
-
-    .menu-link {
-        font-size: 13px;
-    }
-
-    .descricao {
-        font-size: 15px;
-    }
-}
-
-/* Responsivo - Desktop Pequeno */
-@media (min-width: 901px) and (max-width: 1024px) {
-    .titulo {
-        font-size: 30px;
-    }
-
-    .imagem-perfil img {
-        width: 220px;
-        height: 220px;
-    }
-}
-
-/* Responsivo - Desktop Grande */
-@media (min-width: 1025px) {
-    .secao-principal {
-        padding: 80px 40px;
-    }
-
-    .titulo {
-        font-size: 36px;
-    }
-
-    .botao-acao:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-  
-   .formulario{
-    height: auto;
-    left: auto;
-   }   
-    }
+    .titulo { font-size: 22px; }
+    .descricao { font-size: 13px; }
+    .botao-acao { padding: 10px 20px; font-size: 12px; }
 }
