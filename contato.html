@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="contato.css">
     <link rel="stylesheet" href="efeitos.css">
     <link rel="stylesheet" href="page-transition.css">
+    <link rel="icon" href="img/aguia perfil.png" type="image/png" />
     <link rel="stylesheet" href="matrix.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,7 +33,6 @@
         </p>
 
         <div class="container-links">
-
             <a href="https://wa.me/5598986240028?text=Quero%20solicitar%20seus%20serviços" target="_blank" class="card-link whatsapp">
                 <h2>WhatsApp</h2>
                 <p> Entre em contato comigo</p>
@@ -46,10 +46,127 @@
             <a href="https://www.linkedin.com/in/ezequielestevo" target="_blank" class="card-link linkdLin">
                 <h2>LinkedIn</h2>
                 <p>Vamos nos conectar no LinkedIn.</p></a>
+        </div>
 
+        <!-- Formulário de Contato -->
+        <div class="container-formulario">
+            <div id="form-content">
+                <h2 class="titulo-secundario">Ou envie uma mensagem</h2>
+                <form name="contact" method="POST" data-netlify="true" class="formulario" id="contact-form">
+                    <input type="hidden" name="form-name" value="contact" />
+                    <div class="campo">
+                        <label for="name">Nome completo *</label>
+                        <input type="text" id="name" name="name" required placeholder="Seu nome">
+                    </div>
+
+                    <div class="campo-duplo">
+                        <div class="campo">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" placeholder="seu@email.com">
+                        </div>
+                        <div class="campo">
+                            <label for="phone">Telefone / WhatsApp</label>
+                            <input type="tel" id="phone" name="phone" placeholder="(00) 00000-0000">
+                        </div>
+                    </div>
+
+                    <div class="campo">
+                        <label for="message">Sua Pergunta / Mensagem *</label>
+                        <textarea id="message" name="message" required placeholder="Como posso te ajudar?" rows="5"></textarea>
+                    </div>
+
+                    <p class="aviso-validacao" id="validation-msg">Preencha pelo menos o E-mail ou Telefone.</p>
+
+                    <button type="submit" class="btn-enviar" id="btn-submit">
+                        <span id="btn-text">Enviar Mensagem</span>
+                        <div class="loader" id="loader"></div>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Mensagem de Sucesso -->
+            <div id="success-msg" class="mensagem-sucesso">
+                <div class="circulo-sucesso">
+                    <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                        <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+                        <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                    </svg>
+                </div>
+                <h3>Mensagem Enviada!</h3>
+                <p>Obrigado pelo contato. Em breve retornarei sua mensagem.</p>
+                <button class="btn-novo" onclick="window.location.reload()">Enviar outra</button>
+            </div>
         </div>
 
     </section>
+
+    <script>
+        const form = document.getElementById('contact-form');
+        const emailInput = document.getElementById('email');
+        const phoneInput = document.getElementById('phone');
+        const validationMsg = document.getElementById('validation-msg');
+        const formContent = document.getElementById('form-content');
+        const successMsg = document.getElementById('success-msg');
+        const btnSubmit = document.getElementById('btn-submit');
+        const btnText = document.getElementById('btn-text');
+        const loader = document.getElementById('loader');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Validação customizada
+            if (!emailInput.value && !phoneInput.value) {
+                validationMsg.style.display = 'block';
+                emailInput.classList.add('error');
+                phoneInput.classList.add('error');
+                return;
+            }
+
+            // Reset de erros
+            validationMsg.style.display = 'none';
+            emailInput.classList.remove('error');
+            phoneInput.classList.remove('error');
+
+            // Estado de carregamento
+            btnSubmit.disabled = true;
+            btnText.style.opacity = '0';
+            loader.style.display = 'block';
+
+            // Envio via AJAX para o Netlify
+            const formData = new FormData(form);
+            fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString(),
+            })
+            .then(() => {
+                // Animação de saída do formulário
+                formContent.classList.add('fade-out');
+                setTimeout(() => {
+                    formContent.style.display = 'none';
+                    successMsg.style.display = 'flex';
+                    successMsg.classList.add('fade-in');
+                }, 500);
+            })
+            .catch((error) => {
+                alert("Erro ao enviar: " + error);
+                btnSubmit.disabled = false;
+                btnText.style.opacity = '1';
+                loader.style.display = 'none';
+            });
+        });
+
+        // Remove estado de erro ao digitar
+        [emailInput, phoneInput].forEach(input => {
+            input.addEventListener('input', () => {
+                if (emailInput.value || phoneInput.value) {
+                    validationMsg.style.display = 'none';
+                    emailInput.classList.remove('error');
+                    phoneInput.classList.remove('error');
+                }
+            });
+        });
+    </script>
 
     <script src="matrix.js"></script>
     <script src="page-transition.js"></script>
